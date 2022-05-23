@@ -164,7 +164,7 @@ jobs:
     - name: Verify code style (Black)
       uses: psf/black@stable
       with:
-        options: "--verbose ${{ inputs.ENFORCE_BLACK && '--check' || '' }}"
+        options: "--verbose ${{ inputs.ENFORCE_BLACK && '--check' || '' }} --exclude='venv/'"
 
     - name: Enforce code style (Flake8)
       # Will find config automatically in `setup.cfg`, `tox.ini`, or `.flake8` - https://flake8.pycqa.org/en/latest/user/configuration.html#configuration-locations
